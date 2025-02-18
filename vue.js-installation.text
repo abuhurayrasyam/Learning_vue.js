@@ -1,0 +1,8 @@
+At first go to: https://vuejs.org/
+Then click on "Install" button.
+Then select API Preference "Composition" from left-top of the webpage.
+Then scroll down and copy the npm command : npm create vue@latest
+Then go to cmd terminal and create a project folder using: npm create vue@latest projectFolderName
+When folder creation completed then go to the projectFolder and write this command: npm install
+When npm install completed then write this command: npm run dev
+Then copy the url and open it in any browser and the project folder open in vs code.
