@@ -1,6 +1,8 @@
 <script setup>
 // Toggle Accordion with v-for.
 import { ref, reactive } from 'vue';
+import NavComponent from './NavComponent.vue';
+
 const informations = [
     {city: "Dhaka", info: "Dhaka, the capital of Bangladesh, is known for its vibrant culture, historical landmarks, and bustling markets. It is a city that never sleeps, offering a rich blend of tradition and modernity."},
     {city: "Tangail", info: "Tangail is renowned for its handloom sarees, known as Tangail sarees. It is a district with a rich cultural heritage, surrounded by scenic beauty and fertile agricultural land."},
@@ -17,18 +19,23 @@ for (let i = 0; i < informations.length; i++ ){
 </script>
 
 <template>
-    <div class="container mx-auto pt-10">
-        <div class="space-y-4">
-            <div v-for="(information, index) in informations">
-                <button class="w-full text-left flex justify-between items-center bg-gray-200 p-4 rounded-t-lg" @click="accordions[index] = !accordions[index];">
-                    <span class="text-lg font-semibold">{{ information.city }}</span>
-                </button>
-                <div class="bg-gray-100 p-4 border-t border-gray-300" v-show="accordions[index]">
-                    <p>{{ information.info }}</p>
+    <section>
+        <div>
+            <NavComponent/>
+        </div>
+        <div class="container mx-auto pt-10">
+            <div class="space-y-4">
+                <div v-for="(information, index) in informations">
+                    <button class="w-full text-left flex justify-between items-center bg-gray-200 p-4 rounded-t-lg" @click="accordions[index] = !accordions[index];">
+                        <span class="text-lg font-semibold">{{ information.city }}</span>
+                    </button>
+                    <div class="bg-gray-100 p-4 border-t border-gray-300" v-show="accordions[index]">
+                        <p>{{ information.info }}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <style>

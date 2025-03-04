@@ -1,6 +1,7 @@
 <script setup>
 // ref, reactive & event & css-class-binding [css-class and style-binding are same].
 import {ref, reactive } from 'vue';
+import NavComponent from './NavComponent.vue';
 
 const locations = reactive([
     {id: 1, city: "Dhaka", color: "bg-red-500"}, 
@@ -28,6 +29,9 @@ function changeLocation(newLocation){
 
 <template>
     <section>
+        <div>
+        <NavComponent/>
+        </div>
         <div class="flex space-x-4 justify-center pt-20 pb-10">
             <button class="text-white font-bold py-2 px-4 rounded" v-for="location in locations" :key="location.id" @click="changeLocation(location.city)" :class="location.color">
                 {{location.city}}

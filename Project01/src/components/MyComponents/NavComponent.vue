@@ -1,6 +1,6 @@
 <script setup>
     // v-html Rendering.
-    const name = "<strong>Browse</strong>";
+    const name = "<strong>Hurayra</strong>";
 </script>
 
 <template>
@@ -12,10 +12,13 @@
                 <p class="hidden md:block"><span v-html="name"></span><span class="text-[#FFDC26]">4</span>Pets</p> 
                 <!-- v-html Rendering -->
             </div>
-            <div class="md:flex items-center justify-between gap-5 hidden md:block">
-                <p>Find a Pet</p>
-                <p>Breeds</p>
-                <p>Contact us</p>
+            <div class="md:flex items-center justify-between gap-5 hidden md:block"> <!--route added to all-->
+                <RouterLink to="/">Home</RouterLink> <!--one way-->
+                <RouterLink :to="{name:'location'}">Locations</RouterLink> 
+                <RouterLink :to="{name:'toggle'}">Toggles</RouterLink>
+                <RouterLink :to="{name:'image'}">Images</RouterLink> <!--another way-->
+                <RouterLink :to="{name: 'search'}">Search</RouterLink>
+                <RouterLink :to="{name: 'invoice'}">Invoice</RouterLink>
             </div>
             <div class="md:flex items-center justify-between gap-3 hidden md:block">
                 <i class="fa-regular fa-bell"></i>
